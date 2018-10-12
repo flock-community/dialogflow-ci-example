@@ -1,9 +1,14 @@
 language: java
 
+env:
+  global:
+  - CLOUDSDK_CORE_DISABLE_PROMPTS=1
+
 before_install:
   - openssl aes-256-cbc -K $encrypted_7ab224993d8e_key -iv $encrypted_7ab224993d8e_iv -in client-secret.json.enc -out client-secret.json -d
-  - if [ ! -d ${HOME}/google-cloud-sdk ]; then
-       curl https://sdk.cloud.google.com | bash;
+  - if [ ! -d $HOME/google-cloud-sdk/bin ]; then
+      rm -rf $HOME/google-cloud-sdk;
+      curl https://sdk.cloud.google.com | bash > /dev/null;
     fi
 
 script: mvn install test
