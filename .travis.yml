@@ -15,4 +15,4 @@ before_install:
   - TOKEN=`$HOME/google-cloud-sdk/bin/gcloud auth application-default print-access-token`
   - echo ${TOKEN}
 
-script: mvn install test
+script: mvn install test -DprojectID=test-13cdd -Dtoken=${TOKEN}
