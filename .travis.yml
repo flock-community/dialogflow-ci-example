@@ -2,6 +2,7 @@ language: java
 
 env:
   global:
+  - GOOGLE_APPLICATION_CREDENTIALS="client-secret.json"
   - CLOUDSDK_CORE_DISABLE_PROMPTS=1
 
 before_install:
