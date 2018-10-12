@@ -11,7 +11,7 @@ before_install:
       curl https://sdk.cloud.google.com | bash > /dev/null;
     fi
   - $HOME/google-cloud-sdk/bin/gcloud auth application-default print-access-token
-  - TOKEN="$($HOME/google-cloud-sdk/bin/gcloud auth application-default print-access-token)"
+  - TOKEN=`$HOME/google-cloud-sdk/bin/gcloud auth application-default print-access-token`
   - echo "${TOKEN}"
 
 script: mvn install test
