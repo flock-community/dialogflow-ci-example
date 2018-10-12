@@ -10,5 +10,6 @@ before_install:
       rm -rf $HOME/google-cloud-sdk;
       curl https://sdk.cloud.google.com | bash > /dev/null;
     fi
+  - gcloud --version
 
 script: mvn install test
